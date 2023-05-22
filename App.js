@@ -2,6 +2,8 @@ import React from 'react';
 import { StatusBar, SafeAreaView, StyleSheet, Text, View } from 'react-native';
 import { useFonts, Montserrat_400Regular, Montserrat_700Bold} from '@expo-google-fonts/montserrat';
 import Cesta from './src/telas/Cesta';
+import mock from "./src/mocks/cesta";
+import AppLoading from 'expo-app-loading';
 
 export default function App() {
 
@@ -11,13 +13,18 @@ export default function App() {
   });
 
   if(!fonteCarregada) {
-    return <View/>
+    return <AppLoading/>
   }
   
   return (
     <SafeAreaView>
       <StatusBar />
-      <Cesta />
+      {/* Fazer ...mock serve para tirar a camada externa do objeto e 
+      é como se estivéssemos passando cada um dos parâetros por vez assim:
+      <Cesta topo={mock.topo} detalhes={mock.detalhes }/>
+      */}
+      <Cesta {...mock}/>
+
     </SafeAreaView>
   );
 }
