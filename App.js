@@ -17,7 +17,7 @@ export default function App() {
   }
   
   return (
-    <SafeAreaView>
+    <SafeAreaView style={ {flex: 1}}>
       <StatusBar />
       {/* Fazer ...mock serve para tirar a camada externa do objeto e 
       é como se estivéssemos passando cada um dos parâetros por vez assim:
